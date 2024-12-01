@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import axios from '../api/axios'
 
 export default function EmployeeDetails() {
     const { id } = useParams()
     var [employee, setEmployee] = useState([])
+    let navigate = useNavigate()
 
     const getEmployees = async() => {
         const employeeUrl = `/api/v1/emp/employees/${id}`
@@ -16,13 +17,18 @@ export default function EmployeeDetails() {
         }
     }
 
+    const deleteEmployee = async() => {
+        await axios.delete(`https://101329925-comp-3123-assignment1.vercel.app/api/v1/emp/employees?eid=${employee._id}`)
+        navigate(`/employees`)
+    }
+
     useEffect(() => { getEmployees() }, [])
 
   return (
     <div className='tableSection'>
         <div className='editDelete'>
             <button onClick='' className='editButton'>Edit</button>
-            <button onClick='' className='deleteButton'>Delete</button>
+            <button onClick={() => {deleteEmployee()}} className='deleteButton'>Delete</button>
         </div>
         <table>
             <tr>

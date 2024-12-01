@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import axios from '../api/axios'
 
@@ -8,7 +8,7 @@ export default function EmployeeDetails() {
     var [searchField, setSearchField] = useState('')
     var [searchValue, setSearchValue] = useState('')
     var url = ''
-    let navigate = useNavigate();
+    let navigate = useNavigate()
 
     if (field && search) {
         url = `/api/v1/emp/employees/${field}/${search}`
@@ -31,20 +31,23 @@ export default function EmployeeDetails() {
         switch(name) {
             case 'searchIn':
               setSearchField(value)
-              break;
+              break
             case 'searchFor':
               setSearchValue(value)
-              break;
+              break
             default:
-              return null;
+              return null
         }
     }
 
     const handleSubmit = () => {
-        navigate(`/employees/${searchField}/${searchValue}`); 
+        navigate(`/employees/${searchField}/${searchValue}`)
     }
 
-    
+    const deleteEmployee = async(id) => {
+        await axios.delete(`https://101329925-comp-3123-assignment1.vercel.app/api/v1/emp/employees?eid=${id}`)
+        getEmployees()
+    }
 
     useEffect(() => { getEmployees() }, [])
 
@@ -73,10 +76,10 @@ export default function EmployeeDetails() {
                                 <a href={`/employee/${employee._id}`}>{employee.last_name}, {employee.first_name}</a>
                             </td>
                             <td>
-                                <button onClick='' className='editButton'>Edit</button>
+                                <button onClick={() => {navigate(`/employee/edit/${employee._id}`)}} className='editButton'>Edit</button>
                             </td>
                             <td>
-                                <button onClick='' className='deleteButton'>Delete</button>
+                                <button onClick={() => {deleteEmployee(employee._id)}} className='deleteButton'>Delete</button>
                             </td>
                         </tr>
                     ))
