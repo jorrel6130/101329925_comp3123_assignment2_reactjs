@@ -4,7 +4,7 @@ import axios from '../api/axios'
 
 export default function EmployeeDetails() {
     const { id } = useParams()
-    var [employee, setEmployee] = useState([])
+    var [employee, setEmployee] = useState({})
     let navigate = useNavigate()
 
     const getEmployees = async() => {
@@ -36,6 +36,7 @@ export default function EmployeeDetails() {
                 <th>Email</th>
                 <th>Dept</th>
                 <th>Position</th>
+                <th>Salary</th>
                 <th>Date of Joining</th>
             </tr>
             <tr>
@@ -43,7 +44,8 @@ export default function EmployeeDetails() {
                 <td>{employee.email}</td>
                 <td>{employee.department}</td>
                 <td>{employee.position}</td>
-                <td>{employee.date_of_joining}</td>
+                <td>${employee.salary}</td>
+                <td>{new Date(employee.date_of_joining).toString()}</td>
             </tr>
         </table>
     </div>
