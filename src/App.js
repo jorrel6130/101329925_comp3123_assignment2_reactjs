@@ -1,15 +1,15 @@
 import './App.css';
-import { Routes, Route, BrowserRouter, NavLink, Link, Navigate } from 'react-router-dom'
-import React, { Component, StyleSheet } from 'react'
-import Home from './screens/home'
-import EmployeeList from './screens/employeeList'
-import Employee from './screens/employeeDetails'
+import { Routes, Route, BrowserRouter, NavLink, Link, Navigate } from 'react-router-dom';
+import React, { Component, StyleSheet } from 'react';
+import Home from './screens/home';
+import EmployeeList from './screens/employeeList';
+import Employee from './screens/employeeDetails';
 
 export default class App extends Component {
   render() {
     return (
       <div>
-          <h1>COMP</h1>
+          <h1>COMP3123</h1>
         <BrowserRouter>
         <nav>
           <a href='/home'> Home</a>
@@ -19,6 +19,7 @@ export default class App extends Component {
             <Route path='/home' element= { <Home /> }/>
             <Route path='/employees' element= { <EmployeeList /> }/>
             <Route path='/employee/:id' element= { <Employee /> }/>
+            <Route path='/employees/:field/:search' element= { <EmployeeList /> } />
             <Route path="*" element={<Navigate to="/Home" replace />} />
           </Routes>
         </BrowserRouter>
