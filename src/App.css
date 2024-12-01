@@ -1,3 +1,11 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0
+}
+
 .App {
   text-align: center;
   background-color: rgb(27, 34, 46);
@@ -40,6 +48,7 @@
 
 table {
   border: 2px solid #1c9da4;
+  background-color: #EEEEEE;
   width: 800px;
   height: 200px;
   border-radius: 0.4vh;
@@ -57,24 +66,18 @@ th {
 td {
   text-align: center;
   border: 1px solid black;
-  background-color: #30bdff34;
+  background-color: #a0cde2;
   border-radius: 0.3vh;
   padding: 10px;
 }
 
 .editButton {
   background-color: rgba(63, 255, 63, 0.481);
-  min-height: 5vh;
-  min-width: 8vh;
-  border-radius: 1vh;
   margin-right: 0.3vh;
 }
 
 .deleteButton {
   background-color: rgba(255, 45, 45, 0.388);
-  min-height: 5vh;
-  min-width: 8vh;
-  border-radius: 1vh;
   margin-left: 0.3vh;
 }
 
@@ -91,6 +94,96 @@ td {
 }
 
 .tableSection Input {
-  padding: 1vh;
+  padding: .8vh;
+  border-radius: 0.7vh;
+  margin-bottom: 0.8vh;
+}
+
+.tableSection select {
+  padding: .8vh;
+  border-radius: 0.7vh;
+  margin-bottom: 0.8vh;
+}
+
+button {
   border-radius: 1vh;
+  min-height: 5vh;
+  min-width: 8vh;
+  display: inline-flexbox;
+  text-align: center;
+  text-decoration: none;
+  margin: 10px 10% 10px 10%;
+  transition-duration: 0.2s;
+  cursor: pointer;
+}
+
+
+button:hover{
+  transform: scale(1.02);
+}
+
+button:active{
+  transform: scale(0.97);
+  transition-duration: 0.02s;
+}
+
+.submit:hover{
+  transform: scale(1.01);
+}
+
+.submit:active{
+  transform: scale(0.97);
+  transition-duration: 0.05s;
+}
+
+.navbar {
+  background-color: #333333;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 0 1rem;
+  position: relative;
+}
+
+.navbar a {
+  color: inherit;
+}
+
+.navbar ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  gap: 2vh;
+}
+
+.navbar li {
+  font-size: 1.1rem;
+  text-decoration: none;
+  text-align: center;
+  border-style: groove;
+  border-color: #3e7f83;
+  border-width: 0.2rem;
+  border-radius: 0.4rem;
+  padding: 0.5rem;
+}
+
+.navbar li:hover {
+  transform: scale(1.03);
+}
+
+.navbar li:active {
+  transform: scale(0.97);
+  transition-duration: 0.05s;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.login {
+            position: absolute;
+            right: 1rem;
 }

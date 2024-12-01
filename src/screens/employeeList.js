@@ -59,7 +59,7 @@ export default function EmployeeDetails() {
                     <option value='position'>Position</option>
                 </select>
                 <input type='text' name='searchFor' onChange={handleInput} placeholder='enter search term' />
-                <input type='submit' value='Search' />
+                <input type='submit' value='Search' className='submit' />
             </form>
             <table>
                 <tr>
