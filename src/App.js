@@ -12,7 +12,6 @@ import Signup from './screens/signup'
 export default class App extends Component {
 
   tokenCheck = (Component) => {
-    console.log('HUH???')
     return localStorage.getItem('token') ? (
       <Component />
     ) : (
