@@ -1,3 +1,4 @@
+# Author: Jorrel Tigbayan
 # 101329925_COMP3123_Assignment2_ReactJS
 # Dependancies: ReactJS, Axios, react-router-dom
 # Install modules with 'npm i'
