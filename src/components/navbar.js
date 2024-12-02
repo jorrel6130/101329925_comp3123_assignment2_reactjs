@@ -3,10 +3,7 @@ export default function Navbar() {
         <h2 className='title'>Employee Management System</h2>
         <ul>
             <li>
-                <a href='/home'>Home</a>
-            </li>
-            <li>
-                <a href='/employees'>Employees</a>
+                <a href='/employees'>Home</a>
             </li>
         </ul>
         <a href='/home' className='login'>Logout</a>

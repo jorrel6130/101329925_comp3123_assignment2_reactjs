@@ -6,51 +6,11 @@ body {
   margin: 0
 }
 
-.App {
-  text-align: center;
-  background-color: rgb(27, 34, 46);
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 table {
   border: 2px solid #1c9da4;
   background-color: #EEEEEE;
-  width: 800px;
-  height: 200px;
+  min-width: 800px;
+  min-height: 200px;
   border-radius: 0.4vh;
   text-transform: capitalize;
 }
@@ -69,6 +29,11 @@ td {
   background-color: #a0cde2;
   border-radius: 0.3vh;
   padding: 10px;
+}
+
+.addBUtton {
+  background-color: #a0cde2;
+  margin-right: 0.3vh;
 }
 
 .editButton {
@@ -90,6 +55,8 @@ td {
 }
 
 .editDelete {
+  display: flex;
+  flex-direction: row;
   margin-bottom: 1vh;
 }
 
@@ -186,4 +153,33 @@ button:active{
 .login {
             position: absolute;
             right: 1rem;
+}
+
+.loginSheet {
+  display: flex;
+  justify-content: space-around;
+  padding: 4vh;
+  padding-bottom: 10vh;
+  margin: 20px;
+  align-items: center;
+  margin: 10vh;
+  border: 2px solid #1c9da4;
+  background-color: #EEEEEE;
+  border-radius: 4vh;
+  width: 50vh;
+  text-align: center;
+}
+
+.loginSheet ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+}
+
+.loginSheet input {
+  padding: 1vh;
+  border-radius: 1vh;
 }

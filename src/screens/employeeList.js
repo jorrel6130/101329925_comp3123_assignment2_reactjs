@@ -13,7 +13,7 @@ export default function EmployeeDetails() {
     if (field && search) {
         url = `/api/v1/emp/employees/${field}/${search}`
     } else {
-        url= `/api/v1/emp/employees`
+        url = `/api/v1/emp/employees`
     }
 
     const getEmployees = async () => {
@@ -28,15 +28,15 @@ export default function EmployeeDetails() {
 
     const handleInput = (e) => {
         const { name, value } = e.target
-        switch(name) {
+        switch (name) {
             case 'searchIn':
-              setSearchField(value)
-              break
+                setSearchField(value)
+                break
             case 'searchFor':
-              setSearchValue(value)
-              break
+                setSearchValue(value)
+                break
             default:
-              return null
+                return null
         }
     }
 
@@ -44,7 +44,7 @@ export default function EmployeeDetails() {
         navigate(`/employees/${searchField}/${searchValue}`)
     }
 
-    const deleteEmployee = async(id) => {
+    const deleteEmployee = async (id) => {
         await axios.delete(`https://101329925-comp-3123-assignment1.vercel.app/api/v1/emp/employees?eid=${id}`)
         getEmployees()
     }
@@ -76,15 +76,18 @@ export default function EmployeeDetails() {
                                 <a href={`/employee/${employee._id}`}>{employee.last_name}, {employee.first_name}</a>
                             </td>
                             <td>
-                                <button onClick={() => {navigate(`/employee/edit/${employee._id}`)}} className='editButton'>Edit</button>
+                                <button onClick={() => { navigate(`/employee/edit/${employee._id}`) }} className='editButton'>Edit</button>
                             </td>
                             <td>
-                                <button onClick={() => {deleteEmployee(employee._id)}} className='deleteButton'>Delete</button>
+                                <button onClick={() => { deleteEmployee(employee._id) }} className='deleteButton'>Delete</button>
                             </td>
                         </tr>
                     ))
                 }
             </table>
+            <div className='editDelete'>
+                <button onClick={() => {navigate('/employees/add')}} className='addBUtton'>Add</button>
+            </div>
         </div>
     )
 }
