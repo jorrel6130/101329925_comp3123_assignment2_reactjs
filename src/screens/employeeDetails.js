@@ -27,8 +27,8 @@ export default function EmployeeDetails() {
   return (
     <div className='tableSection'>
         <div className='editDelete'>
-            <button onClick='' className='editButton'>Edit</button>
-            <button onClick={() => {deleteEmployee()}} className='deleteButton'>Delete</button>
+            <button onClick={() => navigate(`/employee/edit/${employee._id}`)} className='editButton'>Edit</button>
+            <button onClick={() => deleteEmployee()} className='deleteButton'>Delete</button>
         </div>
         <table>
             <tr>

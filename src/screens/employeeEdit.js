@@ -27,7 +27,6 @@ export default function EmployeeEdit() {
                 'position': employee.position,
                 'salary': employee.salary
             })
-            setEmployee(response.data)
         } catch (error) {
             console.log(error)
         }

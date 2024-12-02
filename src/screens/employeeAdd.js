@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import { useParams, useNavigate } from 'react-router-dom'
+import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import axios from '../api/axios'
 
 export default function EmployeeAdd() {

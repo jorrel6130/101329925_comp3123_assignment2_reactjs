@@ -6,6 +6,8 @@ export default function Navbar() {
                 <a href='/employees'>Home</a>
             </li>
         </ul>
-        <a href='/home' className='login'>Logout</a>
+        <a href='/login' className='login' onClick={() => {
+            localStorage.removeItem('token')
+        }}>Logout</a>
     </nav>
 }

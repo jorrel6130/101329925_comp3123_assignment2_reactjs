@@ -183,3 +183,7 @@ button:active{
   padding: 1vh;
   border-radius: 1vh;
 }
+
+.passwordField {
+  margin-left: 3vh;
+}

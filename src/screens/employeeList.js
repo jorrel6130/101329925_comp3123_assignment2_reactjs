@@ -5,7 +5,7 @@ import axios from '../api/axios'
 export default function EmployeeDetails() {
     const { field, search } = useParams()
     var [employees, setEmployees] = useState([])
-    var [searchField, setSearchField] = useState('')
+    var [searchField, setSearchField] = useState('department')
     var [searchValue, setSearchValue] = useState('')
     var url = ''
     let navigate = useNavigate()
